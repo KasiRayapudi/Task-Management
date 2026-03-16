@@ -17,8 +17,8 @@ const taskroute = require("./routes/taskroute")
 
 app.use("/api/v1",taskroute)
 
-// server
-const port = process.env.port || 3000
+// server (Render sets PORT in uppercase)
+const port = process.env.PORT || process.env.port || 3000
 
 app.listen(port, ()=>{
 console.log("Server running on port",port)

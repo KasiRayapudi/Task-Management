@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: task-api
+    env: node
+    rootDir: taskapi
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DBURL
+        sync: false
+
+  - type: static
+    name: task-manager-ui
+    rootDir: .
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist/task-manager-app/browser
