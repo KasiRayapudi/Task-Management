@@ -17,6 +17,11 @@ const taskroute = require("./routes/taskroute")
 
 app.use("/api/v1",taskroute)
 
+// basic health/info route
+app.get("/", (_req, res) => {
+  res.send("Task API is running. Try /api/v1/getalltasks")
+})
+
 // server (Render sets PORT in uppercase)
 const port = process.env.PORT || process.env.port || 3000
 
