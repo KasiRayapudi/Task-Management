@@ -1,0 +1,49 @@
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+
+<div class="card shadow p-4" style="width:400px">
+
+<h4 class="text-center mb-3">Task Form</h4>
+
+<form #taskForm="ngForm" (ngSubmit)="saveTask(taskForm)">
+
+<div class="mb-3">
+<label>Task ID</label>
+<input type="number" class="form-control" name="taskid" [(ngModel)]="task.taskid" required>
+</div>
+
+<div class="mb-3">
+<label>Task Name</label>
+<input type="text" class="form-control" name="taskname" [(ngModel)]="task.taskname" required>
+</div>
+
+<div class="mb-3">
+<label>Subject</label>
+<input type="text" class="form-control" name="subject" [(ngModel)]="task.subject" required>
+</div>
+
+<div class="mb-3">
+<label>Deadline</label>
+<input type="date" class="form-control" name="deadline" [(ngModel)]="task.deadline" required>
+</div>
+
+<div class="mb-3">
+<label>Status</label>
+
+<select class="form-control" name="status" [(ngModel)]="task.status">
+
+<option>Pending</option>
+<option>Completed</option>
+
+</select>
+
+</div>
+
+<button class="btn btn-primary">Save Task</button>
+
+<button class="btn btn-secondary ms-2" routerLink="/tasklist">Cancel</button>
+
+</form>
+
+</div>
+
+</div>
